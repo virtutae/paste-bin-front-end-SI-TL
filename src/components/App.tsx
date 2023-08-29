@@ -1,5 +1,5 @@
 import InputPage from "./InputPage";
-import "./App.css";
+import "./styles.css";
 
 function App() {
     return (
