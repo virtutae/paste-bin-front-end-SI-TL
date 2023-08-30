@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { entry } from "./interfaces";
+import { History } from "./History";
 
 function InputPage(): JSX.Element {
     const [currentTitle, setCurrentTitle] = useState("");
@@ -26,8 +27,10 @@ function InputPage(): JSX.Element {
             alert("Text body cannot be empty!");
         }
     }
-    console.log(currentEntries);
-
+    const EntriesToDisplay: JSX.Element[] = [];
+    for (const element of currentEntries) {
+        EntriesToDisplay.push(<History entry={element} />);
+    }
     return (
         <>
             <div>
@@ -46,6 +49,7 @@ function InputPage(): JSX.Element {
                 <br />
                 <button onClick={handleSubmit}>Submit</button>
             </div>
+            <div>{EntriesToDisplay}</div>
         </>
     );
 }
