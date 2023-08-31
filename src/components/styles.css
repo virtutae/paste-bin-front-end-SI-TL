@@ -1,4 +1,32 @@
-.textBody {
+.text-body {
     height: 20rem;
     width: 30rem;
+}
+
+.one-entry-container {
+    max-height: 3.6em;
+    line-height: 1.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 2;
+    border-style: outset;
+    margin: 5px;
+}
+
+.input-box {
+    margin: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.history-section {
+    margin: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.input-box-and-history-section {
+    display: flex;
 }

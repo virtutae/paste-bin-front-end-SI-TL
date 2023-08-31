@@ -33,23 +33,23 @@ function InputPage(): JSX.Element {
     }
     return (
         <>
-            <div>
-                <div>Title(optional):</div>
-                <input
-                    onChange={(e) => handleTitleInput(e.target.value)}
-                    value={currentTitle}
-                ></input>
-                <br />
-                <div>Paste your code here:</div>
-                <textarea
-                    className="textBody"
-                    onChange={(e) => handleText(e.target.value)}
-                    value={currentText}
-                ></textarea>
-                <br />
-                <button onClick={handleSubmit}>Submit</button>
+            <div className="input-box-and-history-section">
+                <div className="input-box">
+                    <div>Title(optional):</div>
+                    <input
+                        onChange={(e) => handleTitleInput(e.target.value)}
+                    ></input>
+                    <br />
+                    <div>Paste your code here:</div>
+                    <textarea
+                        className="text-body"
+                        onChange={(e) => handleText(e.target.value)}
+                    ></textarea>
+                    <br />
+                    <button onClick={handleSubmit}>Submit</button>
+                </div>
+                <div className="history-section">{EntriesToDisplay}</div>
             </div>
-            <div>{EntriesToDisplay}</div>
         </>
     );
 }
