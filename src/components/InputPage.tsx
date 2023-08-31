@@ -48,7 +48,9 @@ function InputPage(): JSX.Element {
                     <br />
                     <button onClick={handleSubmit}>Submit</button>
                 </div>
-                <div className="history-section">{EntriesToDisplay}</div>
+                <div className="history-section">
+                    {EntriesToDisplay.reverse().slice(0, 10)}
+                </div>
             </div>
         </>
     );
