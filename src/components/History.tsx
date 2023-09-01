@@ -1,14 +1,14 @@
-import { entry } from "./interfaces";
+import { entryForDisplay } from "./interfaces";
 
 interface HistoryProps {
-    entry: entry;
+    oneEntry: entryForDisplay;
 }
 
 export function History(props: HistoryProps): JSX.Element {
     return (
         <div className="one-entry-container">
-            <div>Title: {props.entry.title}</div>
-            <div>Text: {props.entry.text}</div>
+            <div>Title: {props.oneEntry.title}</div>
+            <div>Text: {props.oneEntry.text_body}</div>
         </div>
     );
 }
