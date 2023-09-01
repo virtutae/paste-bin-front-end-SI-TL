@@ -1,8 +1,7 @@
-import { entry, entryForDisplay } from "./interfaces";
-
+import { entryForDisplay } from "./interfaces";
 
 interface HistoryProps {
-    oneEntry: entry;
+    oneEntry: entryForDisplay;
 }
 
 export function History(props: HistoryProps): JSX.Element {

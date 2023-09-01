@@ -7,8 +7,8 @@ function InputPage(): JSX.Element {
     const [currentTitle, setCurrentTitle] = useState("");
     const [currentText, setCurrentText] = useState("");
     const [currentEntryToSend, setCurrentEntryToSend] = useState<entry>();
-    const [entriesFromApi, setEntriesFromApi] = useState<entry[]>([]);
-    console.log('log from line 11',currentEntryToSend)
+    const [entriesFromApi, setEntriesFromApi] = useState<entryForDisplay[]>([]);
+    console.log("log from line 11", currentEntryToSend);
     useEffect(() => {
         function getEntries() {
             axios
