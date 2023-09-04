@@ -8,16 +8,13 @@ function InputPage(): JSX.Element {
     const [currentText, setCurrentText] = useState("");
     const [currentEntryToSend, setCurrentEntryToSend] = useState<entry>();
     const [entriesFromApi, setEntriesFromApi] = useState<entryForDisplay[]>([]);
-    console.log("log from line 11", currentEntryToSend);
+
     useEffect(() => {
         function getEntries() {
             axios
                 .get("https://paste-bin-si-tl.onrender.com/")
                 .then((response) => setEntriesFromApi(response.data))
-                .catch((error) => console.log(error))
-                .finally(() =>
-                    console.log("log from finally to show axios", axios)
-                );
+                .catch((error) => console.log(error));
         }
         getEntries();
     }, []);
@@ -29,7 +26,6 @@ function InputPage(): JSX.Element {
                     "https://paste-bin-si-tl.onrender.com/",
                     currentEntryToSend
                 )
-                .then((response) => console.log(response))
                 .catch((error) => console.log(error))
                 .finally(() => getUpdatedEntries());
         }
@@ -67,7 +63,6 @@ function InputPage(): JSX.Element {
     const EntriesToDisplay: JSX.Element[] = [];
     for (const element of entriesFromApi) {
         EntriesToDisplay.push(<History oneEntry={element} />);
-        // console.log('logging from line 70',element)
     }
     return (
         <>
